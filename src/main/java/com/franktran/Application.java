@@ -1,16 +1,12 @@
 package com.franktran;
 
-import com.franktran.config.SpringConfig;
-import com.franktran.model.Student;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
+@EnableAutoConfiguration
 public class Application {
 
   public static void main(String[] args) {
-    ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
-
-    Student student = context.getBean("student", Student.class);
-    System.out.println(student);
+    SpringApplication.run(Application.class, args);
   }
 }
