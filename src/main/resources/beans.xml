@@ -9,8 +9,12 @@
 
     <context:annotation-config/>
 
-    <bean id = "student" class = "com.franktran.Student">
-        <property name = "name" value = "Frank" />
-<!--        <property name = "age"  value = "28" />-->
+    <bean id = "person" class = "com.franktran.Person">
+        <constructor-arg name="name" value="Frank"/>
+        <constructor-arg name="age" value="28"/>
     </bean>
+
+    <bean id="field" class="com.franktran.fields.Customer" />
+    <bean id="setter" class="com.franktran.settermethods.Customer" />
+    <bean id="constructor" class="com.franktran.constructors.Customer" />
 </beans>
