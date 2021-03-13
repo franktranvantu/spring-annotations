@@ -1,9 +1,16 @@
 package com.franktran.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Person {
 
   private Integer age;
   private String name;
+
+  public Person() {
+
+  }
 
   public Person(Integer age, String name) {
     this.age = age;
