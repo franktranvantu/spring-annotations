@@ -1,8 +1,14 @@
-package com.franktran.model;
+package com.franktran.model.fields;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Person {
 
+  @Value("28")
   private Integer age;
+  @Value("Frank")
   private String name;
 
   public Person() {

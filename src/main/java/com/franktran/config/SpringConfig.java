@@ -1,17 +1,11 @@
 package com.franktran.config;
 
-import com.franktran.model.Person;
-import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.PropertySource;
 
 @Configuration
+@ComponentScan(basePackages = "com.franktran.model")
 public class SpringConfig {
 
-  @Bean
-  @Lazy
-  public Person person() {
-    System.out.println("Lazy bean");
-    return new Person(28, "Frank");
-  }
 }
