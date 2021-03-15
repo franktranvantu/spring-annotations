@@ -11,5 +11,8 @@ public class Application {
         ApplicationContext context = SpringApplication.run(Application.class, args);
         Driver driver = context.getBean("driver", Driver.class);
         driver.getVehicle().run();
+
+        Biker biker = context.getBean("biker", Biker.class);
+        biker.getVehicle().run();
     }
 }

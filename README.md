@@ -27,4 +27,3 @@ class Biker {
 }
 ```
 In the previous example Car is the primary vehicle. Therefore, in the Driver class, Spring injects a Car bean. Of course, in the Biker bean, the value of the field vehicle will be a Bike object because it's qualified.
-
