@@ -1,4 +1,4 @@
-package com.franktran.fields;
+package com.franktran.field;
 
 import com.franktran.Engine;
 import org.springframework.beans.factory.annotation.Autowired;

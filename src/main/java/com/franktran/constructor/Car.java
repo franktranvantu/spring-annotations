@@ -1,4 +1,4 @@
-package com.franktran.constructors;
+package com.franktran.constructor;
 
 import com.franktran.Engine;
 import org.springframework.beans.factory.annotation.Autowired;

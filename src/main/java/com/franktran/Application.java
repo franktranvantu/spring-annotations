@@ -1,6 +1,6 @@
 package com.franktran;
 
-import com.franktran.constructors.Car;
+import com.franktran.constructor.Car;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;

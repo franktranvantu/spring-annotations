@@ -1,4 +1,4 @@
-package com.franktran.setters;
+package com.franktran.setter;
 
 import com.franktran.Engine;
 import org.springframework.beans.factory.annotation.Autowired;
