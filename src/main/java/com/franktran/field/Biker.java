@@ -1,19 +1,16 @@
-package com.franktran.constructor;
+package com.franktran.field;
 
 import com.franktran.Vehicle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component("constructor")
+@Component("field")
 public class Biker {
 
-    private Vehicle vehicle;
-
     @Autowired
-    public Biker(@Qualifier("bike") Vehicle vehicle) {
-        this.vehicle = vehicle;
-    }
+    @Qualifier("bike")
+    private Vehicle vehicle;
 
     public Vehicle getVehicle() {
         return vehicle;

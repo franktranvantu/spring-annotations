@@ -1,17 +1,17 @@
-package com.franktran.constructor;
+package com.franktran.setter;
 
 import com.franktran.Vehicle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component("constructor")
+@Component("setter")
 public class Biker {
 
     private Vehicle vehicle;
 
     @Autowired
-    public Biker(@Qualifier("bike") Vehicle vehicle) {
+    public void setVehicle(@Qualifier("bike") Vehicle vehicle) {
         this.vehicle = vehicle;
     }
 
