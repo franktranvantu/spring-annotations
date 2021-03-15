@@ -9,10 +9,8 @@ public class Application {
 
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(Application.class, args);
-        Driver driver = context.getBean("driver", Driver.class);
-        driver.getVehicle().run();
-
-        Biker biker = context.getBean("biker", Biker.class);
-        biker.getVehicle().run();
+        Engine engine1 = context.getBean("engine", Engine.class);
+        Engine engine2 = context.getBean("engine", Engine.class);
+        System.out.println(engine1 == engine2);
     }
 }
