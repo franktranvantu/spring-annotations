@@ -1,3 +1,3 @@
-# @Import
+# @PropertySource
 
-The @Import annotation groups Configuration classes into one Configuration class.
+Spring 3.1 also introduces the new @PropertySource annotation as a convenient mechanism for adding property sources to the environment.
