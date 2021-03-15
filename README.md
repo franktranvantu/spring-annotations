@@ -1,6 +1,4 @@
 # @Autowired
 
-This annotation is applied on fields, setter methods, and constructors. The @Autowired annotation injects object dependency implicitly.
-
-When you use @Autowired on fields and pass the values for the fields using the property name, Spring will automatically assign the fields with the passed values.
+We can use the @Autowired to mark a dependency which Spring is going to resolve and inject. We can use this annotation with a constructor, setter, or field injection.
 
