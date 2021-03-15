@@ -1,42 +1,30 @@
-# @Qualifier
+# @Primary
 
-We use @Qualifier along with @Autowired to provide the bean id or bean name we want to use in ambiguous situations.
+Sometimes we need to define multiple beans of the same type. In these cases, the injection will be unsuccessful because Spring has no clue which bean we need.
 
-For example, the following two beans implement the same interface:
+We already saw an option to deal with this scenario: marking all the wiring points with @Qualifier and specify the name of the required bean.
+
+However, most of the time we need a specific bean and rarely the others. We can use @Primary to simplify this case: if we mark the most frequently used bean with @Primary it will be chosen on unqualified injection points:
 ```java
+@Component
+@Primary
+class Car implements Vehicle {}
+
+@Component
 class Bike implements Vehicle {}
 
-class Car implements Vehicle {}
-```
-If Spring needs to inject a Vehicle bean, it ends up with multiple matching definitions. In such cases, we can provide a bean's name explicitly using the @Qualifier annotation.
+@Component
+class Driver {
+    @Autowired
+    Vehicle vehicle;
+}
 
-Using constructor injection:
-
-```java
-@Autowired
-Biker(@Qualifier("bike") Vehicle vehicle) {
-    this.vehicle = vehicle;
+@Component
+class Biker {
+    @Autowired
+    @Qualifier("bike")
+    Vehicle vehicle;
 }
 ```
-Using setter injection:
+In the previous example Car is the primary vehicle. Therefore, in the Driver class, Spring injects a Car bean. Of course, in the Biker bean, the value of the field vehicle will be a Bike object because it's qualified.
 
-```java
-@Autowired
-void setVehicle(@Qualifier("bike") Vehicle vehicle) {
-    this.vehicle = vehicle;
-}
-```
-Alternatively:
-```java
-@Autowired
-@Qualifier("bike")
-void setVehicle(Vehicle vehicle) {
-    this.vehicle = vehicle;
-}
-```
-Using field injection:
-```java
-@Autowired
-@Qualifier("bike")
-Vehicle vehicle;
-```
