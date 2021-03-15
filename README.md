@@ -1,3 +1,3 @@
-# Spring Core Annotations
+# Context Configuration Annotations
 
-We can leverage the capabilities of Spring DI engine using the annotations in the org.springframework.beans.factory.annotation and org.springframework.context.annotation packages.
+We can configure the application context with the annotations described in this section.
