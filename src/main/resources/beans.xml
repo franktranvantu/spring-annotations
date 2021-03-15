@@ -9,8 +9,7 @@
 
     <context:annotation-config/>
 
-    <bean id = "student" class = "com.franktran.Student">
-        <property name = "name" value = "Frank" />
-<!--        <property name = "age"  value = "28" />-->
+    <bean id = "bike" class = "com.franktran.Bike">
+        <property name = "color" value = "green" />
     </bean>
 </beans>
