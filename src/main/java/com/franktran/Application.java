@@ -1,15 +1,15 @@
 package com.franktran;
 
-import com.franktran.config.SpringConfig;
-import com.franktran.model.Person;
+import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
+@ComponentScan
 public class Application {
 
   public static void main(String[] args) {
-    ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+    ApplicationContext context = SpringApplication.run(Application.class, args);
 
-    Person person = context.getBean("person", Person.class);
+    context.getBean("car");
   }
 }
