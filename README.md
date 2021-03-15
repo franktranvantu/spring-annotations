@@ -1,3 +1,3 @@
-# @ImportResource
+# @Import
 
-The @ImportResource annotation allows us to import one or more resources containing bean definitions.
+The @Import annotation groups Configuration classes into one Configuration class.
