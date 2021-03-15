@@ -1,17 +1,14 @@
 package com.franktran;
 
-import com.franktran.config.SpringConfig;
-import com.franktran.service.Service;
+import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
+@ComponentScan
 public class Application {
 
-  public static void main(String[] args) {
-    ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
-
-    Service service = context.getBean("service", Service.class);
-    String connection = service.getConnection();
-    System.out.println(connection);
-  }
+    public static void main(String[] args) {
+        ApplicationContext context = SpringApplication.run(Application.class, args);
+        Vehicle bike = context.getBean("bike", Vehicle.class);
+    }
 }
