@@ -56,23 +56,11 @@ Now we need to enable resource filtering in pom.xml:
     ...
 </build>
 ```
+and append a -P parameter to switch which Maven profile will be applied:
+```bash
+mvn clean package -Pprod
+```
+This command will package the application for prod profile. It also applies the spring.profiles.active value prod for this application when it is running.
+
 ### The Default Profile
 Any bean that does not specify a profile belongs to the default profile.
-
-Spring also provides a way to set the default profile when no other profile is active — by using the spring.profiles.default property.
-### Get Active Profiles
-#### Using Environment
-We can access the active profiles from the Environment object by injecting it:
-
-```java
-public class ProfileManager {
-    @Autowired
-    private Environment environment;
-
-    public void getActiveProfiles() {
-        for (String profileName : environment.getActiveProfiles()) {
-            System.out.println("Currently active profile - " + profileName);
-        }  
-    }
-}
-```
